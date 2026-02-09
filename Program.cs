@@ -8,6 +8,7 @@ wizardB.ShowStats();
 wizardA.Attack(wizardB); //itu yang di dalam parameter itu targetnya
 wizardB.Attack(wizardA);
 wizardA.Attack(wizardB);
+wizardA.Heal(wizardA);
 
 Console.WriteLine("Permainan Berakhir... \n");
 wizardA.ShowStats();
@@ -51,6 +52,7 @@ public class Wizard
         if ( Energy <= 100 )
         {
             Energy += 5;
+            Console.WriteLine($"{Name} melakukan heal, energi bertambah sebanyak {Energy}");
         }
         else
         {
