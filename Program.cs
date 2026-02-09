@@ -1,5 +1,5 @@
-﻿Wizard wizardA = new Wizard("Gokjo", 40);
-Wizard wizardB = new Wizard("Sukini", 45);
+﻿Wizard wizardA = new Wizard("Gokjo", 40, 15, 10);
+Wizard wizardB = new Wizard("Sukini", 45, 15, 10);
 
 Console.WriteLine("Permainan Dimulai... \n");
 wizardA.ShowStats();
@@ -19,9 +19,10 @@ public class Wizard
     public string Name;
     public int Energy;
     public int Damage;
+    public int heal;
 
     //deklarasi constructor
-    public Wizard(string name, int damage) //() itu dalamnya buat ngisi field
+    public Wizard(string name, int damage, int v, int heal) //() itu dalamnya buat ngisi field
     {
         Name = name; //Name itu fieldnya, name kecil itu parameternya
         Energy = 100; // Energy gada parameter di public wizard atas tu, karena udah pasti di set 100
@@ -42,5 +43,18 @@ public class Wizard
         wizardLawanObj.Energy -= Damage;
         Console.WriteLine($"{Name} menyerang {wizardLawanObj.Name}");
         Console.WriteLine($"Sisa Energi {wizardLawanObj.Name} adalah {wizardLawanObj.Energy}");
+    }
+
+    // method heal
+    public void Heal(Wizard wizardA)
+    {
+        if ( Energy <= 100 )
+        {
+            Energy += 5;
+        }
+        else
+        {
+            Console.WriteLine("Sudah mencapai energi maksimum");
+        }
     }
 }
