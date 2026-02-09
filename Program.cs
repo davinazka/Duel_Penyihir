@@ -49,13 +49,15 @@ public class Wizard
     // method heal
     public void Heal(Wizard wizardA)
     {
+        Energy += 5;
+
         if ( Energy <= 100 )
         {
-            Energy += 5;
             Console.WriteLine($"{Name} melakukan heal, energi bertambah sebanyak {Energy}");
         }
         else
         {
+            Energy = 100;
             Console.WriteLine("Sudah mencapai energi maksimum");
         }
     }
